@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <script>
+            function isSubset(array1, array2) {
+                var min = array1[0];
+                var max = array1[0];
+
+                for(let i = 0; i < array1.length; i++){
+                    if(min > array1[i]){
+                        min = array1[i];
+                    }
+
+                    if(max < array1[i]){
+                        max = array1[i];
+                    }
+                }
+
+                console.log("min " + min);
+                console.log("max " + max);
+
+                var min1 = array2[0];
+                var max1 = array2[0];
+
+                for(let j = 0; j < array2.length; j++){
+
+                    if(min1 > array2[j]){
+                        min1 = array2[j];
+                    }
+
+                    if(max1 < array2[j]){
+                        max1 = array2[j];
+                    }
+                }
+
+                console.log("min " + min1);
+                console.log("max " + max1);
+
+
+                if(min > min1 && max < max1){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            }
+
+            const array1 = [3, 1];
+            const array2 = [6, 0];
+
+
+            console.log(isSubset(array1, array2));
+        </script>    
+    </body>
+</html>
